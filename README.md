@@ -143,8 +143,6 @@ Usage
 ```haskell
 main :: IO ()
 main = do
-    -- Load the full BIP-39 wordlist
-    wordlist <- loadWordlist "bip39.txt"
-    seedPhrase <- generateSeedPhrase wordlist
-    putStrLn "Generated Seed Phrase:"
-    putStrLn $ unwords seedPhrase
+  seedPhrase <- generateSeedPhrase
+  putStrLn "Generated Seed Phrase:"
+  putStrLn $ unwords seedPhrase
