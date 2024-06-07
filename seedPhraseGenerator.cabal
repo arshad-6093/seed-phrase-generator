@@ -1,0 +1,52 @@
+cabal-version:      3.0
+name:               seedPhraseGenerator
+version:            0.1.0.0
+synopsis:           Seed Phrase Generator for BlockChain Wallets
+description:        Please see the README on GitHub
+license:            MIT
+license-file:       LICENSE
+author:             arshad-6093
+maintainer:         arshad.kaleelrahman@gmail.com
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/arshad-6093/seed-phrase-generator
+
+library
+  exposed-modules:
+    SeedPhrase
+  other-modules:
+    Paths_seedPhraseGenerator
+  hs-source-dirs:
+    src
+  build-depends:
+      base
+    , cryptonite
+    , random
+    , bytestring
+    , byteable
+    , memory
+  default-language: Haskell2010
+
+common warnings
+    ghc-options: -Wall
+
+executable seed-phrase-generator
+    import:           warnings
+    main-is:          Main.hs
+    other-modules:    Paths_seedPhraseGenerator
+    build-depends:
+          base
+        , cryptonite
+        , random
+        , bytestring
+        , byteable
+        , memory
+        , seedPhraseGenerator
+    hs-source-dirs:   app
+    default-language: Haskell2010
